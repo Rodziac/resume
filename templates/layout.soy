@@ -1,0 +1,49 @@
+{namespace RESU.Views.Layout autoescape="false"}
+
+/**
+ * Bare page layout
+ */
+{template .mainLayout}
+    <div id="headerContainer">
+        {call .header/}
+    </div>
+    <div id="storyContainer"></div>
+    <div id="dartContainer">
+        <span id="dart"></span>
+    </div>
+{/template}
+
+/**
+ * header layout
+ */
+{template .header}
+    <a href="#">
+        <span class="logo"></span>
+    </a>
+    <a href="#">
+        <span class="twitter"></span>
+    </a>
+    <a href="#">
+        <span class="facebook"></span>
+    </a>
+    <a href="#">
+        <span class="tumblr"></span>
+    </a>
+    <a href="#">
+        <span class="youtube"></span>
+    </a>
+
+{/template}
+
+/**
+ * story layout
+ * @param? params comic data
+ */
+{template .storyLayout}
+    <div id="{$params.slug}" class="{css story}">
+        <div class="{css background}">{$params.background}</div>
+        <div class="{css middle}">{$params.middle}</div>
+        <div class="{css foreground}">{$params.foreground}</div>
+        <div class="{css props}">{$params.props}</div>
+    </div>
+{/template}

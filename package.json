@@ -1,0 +1,17 @@
+{
+    "name": "ukiResume",
+    "version": "0.0.1",
+    "description": "Umut Kaya Ilkiz Parallax Web Resume",
+    "author": "Umut Kaya Ilkiz <umutkaya2000@gmail.com>",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "*"
+    },
+    "engines": {
+        "node": "*",
+        "npm": "*"
+    },
+    "private": true
+}
