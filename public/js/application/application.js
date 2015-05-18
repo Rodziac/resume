@@ -10,6 +10,7 @@ goog.require('RESU.Controllers.ProjectsController');
 goog.require('RESU.Controllers.HobbiesController');
 goog.require('RESU.Controllers.FinaleController');
 
+goog.require('goog.events.EventType');
 
 /**
  * Web application base constructor
@@ -18,6 +19,7 @@ goog.require('RESU.Controllers.FinaleController');
  */
 RESU.Application = function() {
 
+    this.globalEvent =  /** @type {goog.events.EventTarget} */ (new RESU.GlobalEvent());
 
 };
 
@@ -44,3 +46,12 @@ RESU.Application.prototype.init = function() {
     finaleController.init();
 
 };
+/**
+ * Global event hub
+ * @extends {goog.events.EventTarget}
+ * @constructor
+ */
+RESU.GlobalEvent = function(){
+    goog.base(this);
+};
+goog.inherits(RESU.GlobalEvent, goog.events.EventTarget);
