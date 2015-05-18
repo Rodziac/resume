@@ -1,0 +1,16 @@
+body {
+    overflow-y: hidden;
+}
+
+#storyContainer {
+    width: 900vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#storyContainer .story {
+    width: 150vw;
+    height: 100vh;
+    overflow: hidden;
+    display: inline-block;
+}
