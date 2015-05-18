@@ -1,5 +1,6 @@
 goog.provide('RESU.Controllers.LayoutController');
 
+goog.require('goog.events');
 goog.require('RESU.Views.Layout');
 goog.require('RESU.MVC.Controller');
 
@@ -21,6 +22,38 @@ RESU.Controllers.LayoutController.prototype.init = function() {
     var pageContainer = goog.dom.getElement("mainWrapper");
 
     this.render(this.layoutTemplate, {}, pageContainer);
+
+    this.bindEvents();
+
+    window.document.body.scrollLeft = 0;
+
+};
+
+RESU.Controllers.LayoutController.prototype.bindEvents = function() {
+
+    var that = this;
+
+    goog.events.listen(window, goog.events.EventType.WHEEL, function(e){
+
+        that.screenScroller(e);
+
+    });
+
+};
+
+
+RESU.Controllers.LayoutController.prototype.screenScroller = function(e) {
+
+    var direction = e.getBrowserEvent().wheelDelta > 0 ? "up" : "down";
+
+    switch(direction) {
+        case "up":
+            window.document.body.scrollLeft = window.document.body.scrollLeft != 0 ?  window.document.body.scrollLeft - 1 : 0;
+            break;
+        case "down":
+            window.document.body.scrollLeft = window.document.body.scrollLeft != 0 ?  window.document.body.scrollLeft + 1 : 1;
+            break;
+    }
 
 };
 
