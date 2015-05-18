@@ -1,6 +1,7 @@
 goog.provide('RESU.Controllers.LayoutController');
 
 goog.require('RESU.Views.Layout');
+goog.require('RESU.MVC.Controller');
 
 /**
  * Layout Constructor

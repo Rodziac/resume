@@ -1,6 +1,7 @@
 goog.provide('RESU.Controllers.WorkController');
 
 goog.require('RESU.Views.Work');
+goog.require('RESU.MVC.Controller');
 
 /**
  * Work Story Constructor

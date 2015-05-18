@@ -1,6 +1,7 @@
 goog.provide('RESU.Controllers.IntroController');
 
 goog.require('RESU.Views.Intro');
+goog.require('RESU.MVC.Controller');
 
 /**
  * Intro Story Constructor

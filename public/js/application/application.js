@@ -1,8 +1,6 @@
 goog.provide('RESU.Application');
 
 goog.require('RESU.MVC.Controller');
-goog.require('RESU.MVC.Model');
-goog.require('RESU.MVC.View');
 
 goog.require('RESU.Controllers.LayoutController');
 goog.require('RESU.Controllers.IntroController');

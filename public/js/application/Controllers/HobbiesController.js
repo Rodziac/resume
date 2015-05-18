@@ -1,6 +1,7 @@
 goog.provide('RESU.Controllers.HobbiesController');
 
 goog.require('RESU.Views.Hobbies');
+goog.require('RESU.MVC.Controller');
 
 /**
  * Hobbies Story Constructor

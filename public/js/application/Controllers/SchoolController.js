@@ -1,6 +1,7 @@
 goog.provide('RESU.Controllers.SchoolController');
 
 goog.require('RESU.Views.School');
+goog.require('RESU.MVC.Controller');
 
 /**
  * School Story Constructor

@@ -1,6 +1,7 @@
 goog.provide('RESU.Controllers.ProjectsController');
 
 goog.require('RESU.Views.Projects');
+goog.require('RESU.MVC.Controller');
 
 /**
  * Projects Story Constructor

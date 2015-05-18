@@ -1,6 +1,7 @@
 goog.provide('RESU.Controllers.FinaleController');
 
 goog.require('RESU.Views.Finale');
+goog.require('RESU.MVC.Controller');
 
 /**
  * Finale Story Constructor
