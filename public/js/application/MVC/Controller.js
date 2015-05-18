@@ -8,6 +8,8 @@ goog.require('goog.dom');
  */
 RESU.MVC.Controller = function() {
 
+    this.globalEvent = /** @type {goog.events.EventTarget} */ (RESU.Registry.get('GlobalEvent'));
+
 };
 
 /**
