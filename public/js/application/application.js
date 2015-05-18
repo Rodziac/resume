@@ -10,8 +10,11 @@ goog.require('RESU.Controllers.ProjectsController');
 goog.require('RESU.Controllers.HobbiesController');
 goog.require('RESU.Controllers.FinaleController');
 
+goog.require('goog.events');
 goog.require('goog.events.EventType');
+goog.require('goog.fx.dom');
 goog.require('goog.structs.Map');
+
 
 /**
  * Web application base constructor
@@ -19,6 +22,8 @@ goog.require('goog.structs.Map');
  * @constructor
  */
 RESU.Application = function() {
+
+    this.scrollProgress = 0;
 
     this.globalEvent =  /** @type {goog.events.EventTarget} */ (new RESU.GlobalEvent());
     RESU.Registry.set("GlobalEvent",  this.globalEvent);
@@ -46,6 +51,50 @@ RESU.Application.prototype.init = function() {
     projectsController.init();
     hobbiesController.init();
     finaleController.init();
+
+    this.eventHandlers();
+
+};
+
+
+/**
+ * Application event listeners
+ */
+RESU.Application.prototype.eventHandlers = function() {
+
+    var that = this;
+
+    goog.events.listen(window.document.body, goog.events.EventType.WHEEL, function(e){
+
+        e.preventDefault();
+        that.screenScroller(e);
+
+    });
+
+};
+
+RESU.Application.prototype.screenScroller = function(e) {
+
+    var direction = e.getBrowserEvent().deltaY > 0 ? "down" : "up";
+
+    switch (direction) {
+        case "up":
+            if (this.scrollProgress <= 0) {
+                this.scrollProgress = 0;
+            } else {
+                this.scrollProgress -= 1;
+            }
+            break;
+        case "down":
+            if (this.scrollProgress >= 10000) {
+                this.scrollProgress = 10000;
+            } else {
+                this.scrollProgress += 1;
+            }
+            break;
+    }
+
+    this.globalEvent.dispatchEvent({type: "page_scroll", position: this.scrollProgress});
 
 };
 

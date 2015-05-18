@@ -7,7 +7,12 @@
     <div id="headerContainer">
         {call .header/}
     </div>
-    <div id="storyContainer"></div>
+    <div id="storyContainer">
+        <div class="{css layerStrip}" id="{css backgrounds}"></div>
+        <div class="{css layerStrip}" id="{css middles}"></div>
+        <div class="{css layerStrip}" id="{css foregrounds}"></div>
+        <div class="{css layerStrip}" id="{css props}"></div>
+    </div>
     <div id="dartContainer">
         <span id="dart"></span>
     </div>
@@ -33,17 +38,4 @@
         <span class="youtube"></span>
     </a>
 
-{/template}
-
-/**
- * story layout
- * @param? params comic data
- */
-{template .storyLayout}
-    <div id="{$params.slug}" class="{css story}">
-        <div class="{css background}">{$params.background}</div>
-        <div class="{css middle}">{$params.middle}</div>
-        <div class="{css foreground}">{$params.foreground}</div>
-        <div class="{css props}">{$params.props}</div>
-    </div>
 {/template}
