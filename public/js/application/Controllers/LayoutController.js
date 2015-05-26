@@ -2,6 +2,7 @@ goog.provide('RESU.Controllers.LayoutController');
 
 goog.require('goog.events');
 goog.require('goog.fx.dom');
+goog.require('goog.fx.easing');
 goog.require('RESU.Views.Layout');
 goog.require('RESU.MVC.Controller');
 
@@ -61,10 +62,11 @@ RESU.Controllers.LayoutController.prototype.scrollEvent = function() {
                 0
             ],
             [
-                this.scrollProgress,
+                e.position * 50,
                 0
             ],
-            500
+            500,
+            goog.fx.easing.easeOut
         );
         scroller.play();
 

@@ -35,6 +35,10 @@ RESU.Controllers.HobbiesController.prototype.init = function() {
 
 RESU.Controllers.HobbiesController.prototype.eventsHandler = function() {
 
+    goog.events.listen(this.globalEvent, "page_scroll", function(e){
+
+    });
+
 };
 
 RESU.Controllers.HobbiesController.prototype.backgroundTemplate = RESU.Views.Hobbies.background;

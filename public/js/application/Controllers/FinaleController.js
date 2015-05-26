@@ -36,7 +36,7 @@ RESU.Controllers.FinaleController.prototype.init = function() {
 RESU.Controllers.FinaleController.prototype.eventsHandler = function() {
 
     goog.events.listen(this.globalEvent, "page_scroll", function(e){
-        debugger;
+
     });
 
 };

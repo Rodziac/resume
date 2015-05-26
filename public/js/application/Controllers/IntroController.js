@@ -35,6 +35,10 @@ RESU.Controllers.IntroController.prototype.init = function() {
 
 RESU.Controllers.IntroController.prototype.eventsHandler = function() {
 
+    goog.events.listen(this.globalEvent, "page_scroll", function(e){
+
+    });
+
 };
 
 RESU.Controllers.IntroController.prototype.backgroundTemplate = RESU.Views.Intro.background;
