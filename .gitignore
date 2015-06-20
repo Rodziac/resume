@@ -8,4 +8,6 @@ tools/mappings/*
 *.pyc
 .idea/
 
+node_modules
+
 !.keepMe
